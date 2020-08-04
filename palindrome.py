@@ -1,15 +1,12 @@
-def palindrome(expr):
-    pal = expr.lower()
-    a = 0
-    b = len(expr) - 1
+import string
 
-    while a < b:
-        if pal[a] == pal[b]:
-            a += 1
-            b -= 1
-        else:
-             return False
-    return True
+def palindrome(expr):
+    expr = expr.lower()
+    expr = expr.replace(" ", "")
+    expr = expr.translate(str.maketrans('', '', string.punctuation))
+    pal = expr[::-1]
+
+    return expr == pal
     
 
 def main():
