@@ -22,3 +22,9 @@ if __name__ == '__main__':
 '''
 
 OFFICIAL SOLUTION
+
+words = input.split()
+words = [w.lower() + w for w in words]
+words.sort()
+words = 
+    
