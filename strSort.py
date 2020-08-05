@@ -2,14 +2,9 @@ import string
 
 def strSort(expr):
     list1 = expr.split(' ')
-    sorted_list = sorted(list1, key=str.casefold)
-    out = ""
+    words = sorted(list1, key=str.casefold)
 
-    for word in sorted_list:
-        out += word + " "
-
-    return out.strip()
-    
+    return ' '.join(words)
 
 def main():
     exp = input("Please enter an expression: ")
