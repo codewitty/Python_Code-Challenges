@@ -1,27 +1,19 @@
 import string
 
-def strSort(expr):
-    list1 = expr.split(' ')
-    words = sorted(list1, key=str.casefold)
-
-    return ' '.join(words)
+def indexAll(list1, num):
+    indices = []
+    for i in range(len(list1)):
+        if list1[i] == num:
+            indices.append([i])
+        elif isinstance(list1[i], list):
+            for index in indexAll(list1[i], num):
+                indices.append([i] + index)
+    return indices
 
 def main():
-    exp = input("Please enter an expression: ")
-    print (f'{strSort(exp)}')
+    exp = [[[1, 2, 3], 2, [1, 3]], [1, 2, 3]]
+    print (f'{indexAll(exp, 2)}')
 
 if __name__ == '__main__':
     main()
 
-
-'''
-
-OFFICIAL SOLUTION
-
-def strSort(input):
-    words = input.split()
-    words = [w.lower() + w for w in words]
-    words.sort()
-    words = [w[len(w)//2:] for w in words]
-    return ' '.join(words)
-''' 
