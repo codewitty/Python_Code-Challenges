@@ -7,7 +7,7 @@ def waitingGame():
     while True:
         num = random.randrange(2,5)
         print(f'Your target time is {num} seconds.')
-        input("---Press enter to begin--- \n")
+        input("---Press enter to begin the {} countdown--- \n".format(num))
         start= time.perf_counter()
         input('....Press enter again after {} seconds....'.format(num))
         elapsed = time.perf_counter() - start
