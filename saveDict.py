@@ -1,19 +1,17 @@
-import csv
-import os
+import pickle
 
-def saveDict(dictObj, path):
-   w = csv.writer(open("{}.output.csv", "w").format(path))
-   for key, val in dictObj.items():
-       w.writerow([key, val]) 
-
-
-
-#def loadDict(path)
+def save_dict(dict_to_save, file_path):
+    with open(file_path, 'wb') as file:
+        pickle.dump(dict_to_save, file)
+    
+def load_dict(file_path):
+    with open(file_path, 'rb') as file:
+        return pickle.load(file)
 
 def main():
-    dict1 = {'Python' : '.py', 'C++' : '.cpp', 'Java' : '.java'}
-    path = input("Please enter the path you would like to save to: ")
-    saveDict(dict1, path)
-
+    test_dict = {1: 'a', 2: 'b', 3: 'c'}
+    save_dict(test_dict, 'test_dict.pickle')
+    recovered = load_dict('test_dict.pickle')
+    print(recovered)
 if __name__ == '__main__':
     main()
