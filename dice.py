@@ -15,7 +15,7 @@ def roll_dice(*args, trials = 1000000):
 
     print (f'\nOUTCOME\tPROBABILITY')
     for outcome in range (len(args), sum(args) + 1):
-        print(f'{outcome}\t{d_dict[outcome]*100/trials}')
+        print(f'{outcome}\t{d_dict[outcome]*100/trials:0.2f}')
 
 def main():
     roll_dice(4,6,6)
