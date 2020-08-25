@@ -6,9 +6,9 @@ def generate_password(length):
     password = ""
     with open("passcode.txt") as myfile:
         for line in myfile:
-            passkey, phrase = line.partition("\t")[::2]
+            passkey, phrase = line.split()
             passphrases[passkey] = phrase.strip("\n")
-    #print(passphrases)
+    print(passphrases)
     for num in range(length):
         code = ""
         for roll in range(5):
