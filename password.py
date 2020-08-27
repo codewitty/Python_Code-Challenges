@@ -8,12 +8,10 @@ def generate_password(length):
         for line in myfile:
             passkey, phrase = line.split()
             passphrases[passkey] = phrase.strip("\n")
-    print(passphrases)
     for num in range(length):
         code = ""
         for roll in range(5):
             code += str(random.randint(1, 6))
-        print(code)
         password += passphrases[code] + " "
 
     return password.rstrip()
