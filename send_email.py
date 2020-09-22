@@ -10,7 +10,7 @@ def send_email(receiver_email, subject, body):
         server.sendmail(SENDER_EMAIL, receiver_email, message)
 
 def main():
-    sub = 'This is a test email to check if it works. AND IT WORKED!!!!'
+    sub = 'This is a test email to check if it works. AAAAAND IT WORKED!!!!'
     body = 'IT WORKED'
     rec = 'gomesjoshua@gmail.com'
     send_email(rec, sub, body)
