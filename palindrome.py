@@ -1,4 +1,6 @@
 import string
+import math:wq
+
 
 def palindrome(expr):
     expr = expr.lower()
